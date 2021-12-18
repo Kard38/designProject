@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>oyun ismi: {{ game.GameName }}<br></p>
+    <p>oyun çıkış tarihi: {{ detail.ReleaseDate }}<br></p>
+    <p>Yaş sınırı: {{ detail.RequiredAge }}<br></p>
+    <p>Demo sayısı: {{ detail.DemoCount }}<br></p>
+    <p>DLC sayısı: {{ detail.DLCCount }}<br></p>
+    <p>Metacritic puanı: {{ detail.Metacritic }}<br></p>
+    <p>Tavsiye sayısı: {{ detail.RecommendationCount }}<br></p>
+    <p>Hakkında: {{ detail.AboutText }}<br></p>
+    <p>Detaylı tanıtım: {{ detail.DetailedDescrip }}<br></p>
+    <p>Desteklenen dil sayısı: {{ detail.SupportedLanguages }}<br></p>
+    <p>--Kategori--</p>
+    <p> {{ category.get_template_names }}</p>
+
+
+
+<p>naber</p>
+
+<P>--Desteklenen platformlar--</p>
+
+
+</body>
+</html>

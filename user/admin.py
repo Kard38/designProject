@@ -1,4 +1,5 @@
 from django.contrib import admin
-from user.models import users
+from user.models import *
 # Register your models here.
-admin.site.register(users)
+admin.site.register(Users)
+admin.site.register(UsersFavorites)

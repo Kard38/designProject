@@ -1,7 +1,13 @@
 from django.shortcuts import render
 
 # Create your views here.
+import game.urls
+import user.models
+
 
 def home_view(request):
-
-    return render(request, 'home.html',)
+    gameurl = game.urls.game_index
+    context = {
+        'oyunlar': gameurl
+    }
+    return render(request, 'home.html', context)
