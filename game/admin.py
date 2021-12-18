@@ -1,7 +1,24 @@
 from django.contrib import admin
 from game.models import *
 
-admin.site.register(Games,GamesDetails)
 
-admin.site.__reduce__(Category)
+class GameAdmin(admin.ModelAdmin):
+    list_display = ['GameID', 'GameName']
+
+    class Meta:
+        model = Games
+
+
+class GameAdmin2(admin.ModelAdmin):
+    list_display = ['games', 'Platform']
+
+    class Meta:
+        model = Platform
+
+
+admin.site.register(Games)
+admin.site.register(GamesDetails)
+admin.site.register(Platform)
+admin.site.register(Category)
+
 # Register your models here.
