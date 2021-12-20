@@ -2,23 +2,24 @@ from django.contrib import admin
 from game.models import *
 
 
+class GameDetailInline(admin.StackedInline):
+    model = GamesDetails
+
+
+class GameCategoryInline(admin.StackedInline):
+    model = Category
+
+
+class GamePlatformInline(admin.StackedInline):
+    model = Platform
+
+
 class GameAdmin(admin.ModelAdmin):
-    list_display = ['GameID', 'GameName']
-
-    class Meta:
-        model = Games
-
-
-class GameAdmin2(admin.ModelAdmin):
-    list_display = ['games', 'Platform']
-
-    class Meta:
-        model = Platform
+    fieldsets = [
+        (None, {'fields': ['GameName']})
+    ]
+    inlines = [GameDetailInline, GamePlatformInline, GameCategoryInline]
 
 
-admin.site.register(Games)
-admin.site.register(GamesDetails)
-admin.site.register(Platform)
-admin.site.register(Category)
-
+admin.site.register(Games, GameAdmin)
 # Register your models here.
