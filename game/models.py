@@ -1,8 +1,12 @@
 from django.db import models
 from django.urls import reverse
+# from django.contrib.auth.models import User
 
 
 # Create your models here.
+from account.models import CustomUser
+
+
 class Games(models.Model):
     object = None
     # GameId int primary key
@@ -62,7 +66,6 @@ class Category(models.Model):
         return self.games.GameName
 
 
-
 class Platform(models.Model):
     # GameId
     GameId = Games.GameId
@@ -76,3 +79,12 @@ class Platform(models.Model):
 
     def __str__(self):
         return self.games.GameName
+
+
+class UsersFavorites(models.Model):
+    favoritesId = models.AutoField(primary_key=True)
+    users = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default=None)
+    games = models.ForeignKey(Games, on_delete=models.CASCADE, default=None)
+
+    def __str__(self):
+        return self.users.username

@@ -19,7 +19,16 @@ class GameAdmin(admin.ModelAdmin):
         (None, {'fields': ['GameName']})
     ]
     inlines = [GameDetailInline, GamePlatformInline, GameCategoryInline]
+    list_display = ['GameName', 'GameId']
 
 
+class UserFavoritesAdmin(admin.ModelAdmin):
+    list_display = ('users', 'games')
+
+    class Meta:
+        model = UsersFavorites
+
+
+admin.site.register(UsersFavorites, UserFavoritesAdmin)
 admin.site.register(Games, GameAdmin)
 # Register your models here.

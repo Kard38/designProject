@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 import game.urls
-import user.models
+import account.models
 
 
 def home_view(request):
