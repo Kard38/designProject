@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{% static 'game.css' %}">
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}{{ game.GameName }}{% endblock %}
+{% block body %}
 <div class="list">
     <h1>Game list</h1>
     {% for game in games %}
         <a href="{{game.get_absolute_url }}">{{ game.GameName }}</a><br>
     {% endfor %}
 </div>
-</body>
-</html>
+{% endblock %}

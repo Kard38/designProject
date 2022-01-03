@@ -2,10 +2,10 @@
 {% block body %}
     <div>
         <h1>Ana Sayfa</h1>
-        <a href='{% url 'game:index' %}'>Oyunlar</a>
-        <a href='{% url 'game:category' %}'> Kategoriler </a>
-        <a href='{% url 'account:login' %}'>Giriş Yap</a>
-        <a href=' {% url 'account:register' %}'>Kayıt Ol</a>
+{#        <a href='{% url 'game:index' %}'>Oyunlar</a>#}
+{#        <a href='{% url 'game:category' %}'> Kategoriler </a>#}
+{#        <a href='{% url 'account:login' %}'>Giriş Yap</a>#}
+{#        <a href=' {% url 'account:register' %}'>Kayıt Ol</a>#}
     </div>
     <h1>Hoşgeldiniz, {{ request.user.get_username }}</h1>
 

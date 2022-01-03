@@ -33,3 +33,12 @@ def game_cat(request):
         'game': category,
     }
     return render(request, 'game/category.html', context)
+
+
+def user_favorite(request):
+    current_user = request.user
+    games = UsersFavorites.objects.filter(users=current_user)
+    context = {
+        'games': games,
+    }
+    return render(request, 'game/userfavorite.html', context)

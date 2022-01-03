@@ -1,0 +1,61 @@
+<style class="nav">
+    nav div {
+        background-color: #490202
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #490202;
+    }
+
+    li {
+        float: left;
+    }
+
+    li, ul a {
+        display: compact;
+        color: #b9b9b9;
+        text-align: center;
+        padding: 5px 1px;
+        text-decoration: none;
+        background-color: #4d4a4a;
+    }</style>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="banner">
+    <div class="container">
+
+        <div class="nav">
+            <!-- İsim Soyisim veya Marka İsmi -->
+            <ul><a href="{% url 'home' %}" class="navbar-brand">Oyun Öneri</a></ul>
+        </div>
+        <br>
+
+        <nav class="collapse navbar-collapse" role="navigation">
+
+
+            <!-- Temel Sayfalar -->
+            <ul class="nav navbar-nav navbar-right">
+                {% if request.user.is_authenticated %}
+
+                {% endif %}
+                <li><a href="{% url 'home' %}">Anasayfa</a></li>
+                <li><a href="{% url 'game:index' %}">Oyunlar</a></li>
+                <li><a href="{% url 'game:category'%}">Kategoriler</a></li>
+
+
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'account:register' %}">Üye Ol</a></li>
+                    <li><a href="{% url 'account:login' %}">Giriş</a></li>
+                {% else %}
+                    <li><a href="{% url 'game:userfavorite' %}">Favorilerim</a></li>
+                    <li><a>Hesap Detaylari</a></li>
+                    <li><a href="{% url 'account:logout' %}">Çıkış</a></li>
+                {% endif %}
+            </ul>
+
+        </nav>
+
+    </div>
+</nav>
