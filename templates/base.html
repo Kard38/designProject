@@ -7,7 +7,17 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="banner">
 
+
+                {% if not request.user.is_authenticated %}
+                    <li><a href="{% url 'account:register' %}">Üye Ol</a></li>
+                    <li><a href="{% url 'account:login' %}">Giriş</a></li>
+                {% else %}
+                    <li><a href="{% url 'account:logout' %}">Çıkış</a></li>
+                {% endif %}
+
+</nav>
     {% block body %}
 
     {% endblock %}
