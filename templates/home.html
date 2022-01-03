@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>--Burası home sayfası--</p>
-<a href='{% url 'game:index' %}'>Oyunlar</a>
+{% extends 'base.html' %}
+{% block body %}
+    <div>
+        <h1>Ana Sayfa</h1>
+        <a href='{% url 'game:index' %}'>Oyunlar</a>
+        <a href='{% url 'game:category' %}'> Kategoriler </a>
+        <a href='{% url 'account:login' %}'>Kayıt ol</a>
+    </div>
+    <h1>Hoşgeldiniz, {{ request.user.get_username }}</h1>
 
-</body>
-</html>
+{% endblock %}

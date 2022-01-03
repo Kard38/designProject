@@ -1,0 +1,58 @@
+
+p {
+    background: aquamarine;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+div {
+    background-color: cadetblue;
+    border-radius: 10px;
+    padding-inline: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+
+
+}
+
+.list h1 {
+
+    color: #413f3f;
+    width: 200px;
+    text-align: center;
+
+}
+a {
+    background-color: #f44336;
+    color: white;
+    width: 200px;
+    margin: 2px;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button {
+    border-radius: 7px;
+    background-color: #e3e30d;
+    margin-top: 10px
+
+}
+
+.platform
+p {
+    background: red
+}
+
+body {
+    background-color: #363535;
+    padding-inline: 50px;
+    padding-top: 20px;
+
+
+}
+
+.favori {
+    margin-left: 150px;
+}

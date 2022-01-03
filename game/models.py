@@ -47,7 +47,6 @@ class Category(models.Model):
     CategoryCoop = models.BooleanField()
     CategoryMMO = models.BooleanField()
     CategoryInAppPurchase = models.BooleanField()
-    CategoryIncludeLevelEditor = models.BooleanField()
     CategoryVRSupport = models.BooleanField()
     GenreIsIndie = models.BooleanField()
     GenreIsAction = models.BooleanField()

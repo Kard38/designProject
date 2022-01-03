@@ -21,6 +21,6 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('game/', include('game.urls'), name='game'),
-    path('', home_view),
+    path('', home_view, name='home'),
+    path('account/', include('account.urls'), name='account'),
 ]
-

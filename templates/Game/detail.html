@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
+{% extends 'base.html'%}
+{% block title %}{{ game.GameName }}{% endblock %}
+{% block body %}
+<div>
+    <h1>{{ game.GameName }}<button class="favori">Favori Ekle</button>
+    </h1>
     <p>oyun ismi: {{ game.GameName }}<br></p>
     <p>oyun çıkış tarihi: {{ detail.ReleaseDate }}<br></p>
     <p>Yaş sınırı: {{ detail.RequiredAge }}<br></p>
@@ -15,15 +15,29 @@
     <p>Hakkında: {{ detail.AboutText }}<br></p>
     <p>Detaylı tanıtım: {{ detail.DetailedDescrip }}<br></p>
     <p>Desteklenen dil sayısı: {{ detail.SupportedLanguages }}<br></p>
-    <p>--Kategori--</p>
-    <p> {{ category.get_template_names }}</p>
+</div>
+<div>
+    <h1>Kategori</h1>
+    <P>Tek Oyunculu</P>
+    <p>Multiplayer</p>
 
+</div>
 
+<div class="platform">
+    <h1>Desteklenen platformlar</h1>
+    <p> Windows: {% if platform.Windows %} Destekleniyor {% else %} Desteklenmiyor{% endif %}</p>
+    <p> Linux: {% if platform.Linux %} Destekleniyor {% else %} Desteklenmiyor{% endif %}</p>
+    <p> Mac: {% if platform.Mac %} Destekleniyor {% else %} Desteklenmiyor{% endif %}</p>
+    <p> PS4: {% if platform.PS4 %} Destekleniyor {% else %} Desteklenmiyor{% endif %}</p>
+    <p> PS5: {% if platform.PS5 %} Destekleniyor {% else %} Desteklenmiyor{% endif %}</p>
+    <p> Xbox One: {% if platform.XBOXONE %} Destekleniyor {% else %} Desteklenmiyor{% endif %}</p>
 
-<p>naber</p>
+</div>
 
-<P>--Desteklenen platformlar--</p>
+<div>
+    <button style="margin-top: 10px" onclick="renk()">Favorilere ekle</button>
+</div>
 
-
-</body>
-</html>
+<script>
+</script>
+{% endblock %}

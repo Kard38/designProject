@@ -1,13 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="{% static 'game.css' %}">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-    <p>Game list</p>
-    {%for game in games %}
-     <a href="{{ game.get_absolute_url }}">{{ game.GameName }}</a><br>
+<div class="list">
+    <h1>Game list</h1>
+    {% for game in games %}
+        <a href="{{game.get_absolute_url }}">{{ game.GameName }}</a><br>
     {% endfor %}
+</div>
 </body>
 </html>
