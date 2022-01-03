@@ -1,27 +1,35 @@
 {% extends 'base.html' %}
 {% block body %}
+    {#    <div>#}
+    {#    <h1>Kategoriler</h1>#}
+    {#    <a>Tek Oyunculu</a>#}
+    {#    <a>Çok Oyunculu</a>#}
+    {#    <a>CO-OP</a>#}
+    {#    <a>MMO</a>#}
+    {#    <a>Uygulama İçi Satın Alma </a>#}
+    {#    <a>VR destekli</a>#}
+    {#    <a>Bağımsız</a>#}
+    {#    <a>Aksiyon</a>#}
+    {#    <a>Adventure</a>#}
+    {#    <a>Casual</a>#}
+    {#    <a>Strateji</a>#}
+    {#    <a>RPG</a>#}
+    {#    <a>Simulasyon</a>#}
+    {#    <a>Erken erişim</a>#}
+    {#    <a>Ücretsiz</a>#}
+    {#    <a>Spor</a>#}
+    {#    <a>Yarış</a>#}
+    {#    <a>Devasa Çok Oyunculu</a>#}
+    {#    </div>#}
     <div>
-    <h1>Kategoriler</h1>
-    <a>Tek Oyunculu</a>
-    <a>Çok Oyunculu</a>
-    <a>CO-OP</a>
-    <a>MMO</a>
-    <a>Uygulama İçi Satın Alma </a>
-    <a>VR destekli</a>
-    <a>Bağımsız</a>
-    <a>Aksiyon</a>
-    <a>Adventure</a>
-    <a>Casual</a>
-    <a>Strateji</a>
-    <a>RPG</a>
-    <a>Simulasyon</a>
-    <a>Erken erişim</a>
-    <a>Ücretsiz</a>
-    <a>Spor</a>
-    <a>Yarış</a>
-    <a>Devasa Çok Oyunculu</a>
-    </div>
+        {% for fields in field %}
+            {% if fields.name != "id" and fields.name != "games" %}
+                <a>{{ fields.verbose_name }}</a>
+                {% else %}
 
+            {% endif %}
+        {% endfor %}
+    </div>
 
 
 {% endblock %}

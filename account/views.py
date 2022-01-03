@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm
 from django.contrib.auth import authenticate, login, logout
+from .models import CustomUser
+from game.models import UsersFavorites
 
 
 # Create your views here.
@@ -28,6 +30,20 @@ def register_view(request):
         return redirect('home')
     return render(request, "User/form.html", {"form": form, 'title': 'Üye Ol'})
 
+
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+
+def userdetail_view(request):
+    currentUser=request.user
+    users = CustomUser.objects.filter()
+    favoritegame =UsersFavorites.objects.filter(users=currentUser)
+
+    context = {
+        'users': users,
+        'favoritegame':favoritegame
+
+    }
+    return render(request, "User/userdetails.html", context)

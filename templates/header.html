@@ -50,7 +50,7 @@
                     <li><a href="{% url 'account:login' %}">Giriş</a></li>
                 {% else %}
                     <li><a href="{% url 'game:userfavorite' %}">Favorilerim</a></li>
-                    <li><a>Hesap Detaylari</a></li>
+                    <li><a href="{% url 'account:userdetail' %}">Hesap Detaylari</a></li>
                     <li><a href="{% url 'account:logout' %}">Çıkış</a></li>
                 {% endif %}
             </ul>

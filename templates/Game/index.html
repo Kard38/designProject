@@ -4,6 +4,7 @@
 <div class="list">
     <h1>Game list</h1>
     {% for game in games %}
+
         <a href="{{game.get_absolute_url }}">{{ game.GameName }}</a><br>
     {% endfor %}
 </div>

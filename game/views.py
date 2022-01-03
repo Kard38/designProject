@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import *
+from account.models import CustomUser
 
 
 # Create your views here.
@@ -10,15 +11,20 @@ def game_index(request):
 
 
 def game_detail(request, id):
+    currentUser = request.user
     game = get_object_or_404(Games, GameId=id)
     gamedetail = get_object_or_404(GamesDetails, games_id=id)
     gamecategory = get_object_or_404(Category, games_id=id)
     gameplatform = get_object_or_404(Platform, games_id=id)
-
+    userfav = UsersFavorites.objects.filter(users=currentUser)
+    selectgame = gamecategory._meta.get_fields()
+    userfav = userfav.filter(games_id=id)
     context = {
         'game': game,
         'detail': gamedetail,
-        'category': gamecategory,
+        'gamecategory': gamecategory,
+        'selectgame': selectgame,
+        'userfav': userfav,
         'platform': gameplatform,
 
     }
@@ -26,11 +32,10 @@ def game_detail(request, id):
 
 
 def game_cat(request):
-    category = Category.objects.all()
-    category = Category.objects.filter()
-
+    field = Category._meta.get_fields()
     context = {
-        'game': category,
+        # 'game': category,
+        'field': field,
     }
     return render(request, 'game/category.html', context)
 

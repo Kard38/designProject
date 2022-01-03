@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="{% static 'game.css' %}">
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Kullanıcı Detay{% endblock %}
+{% block body %}
+    <div style="padding: 20px">
+        <p>Kullanıcı Adı: {{ user.get_username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Son Giriş: {{ user.last_login }}</p>
+        <p>Doğum Tarihi: {{ user.user_birthday }}</p>
+        <p>Kayıt Olma Tarihi: {{ user.date_joined }}</p>
+        <p>Favori Oyun Sayısı: {{ favoritegame.count }}</p>
 
-</body>
-</html>
+    </div>
+
+
+{% endblock %}

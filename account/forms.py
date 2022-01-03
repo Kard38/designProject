@@ -22,7 +22,7 @@ class RegisterForm(forms.ModelForm):
     password1 = forms.CharField(max_length=100, label='Parola', widget=forms.PasswordInput)
     password2 = forms.CharField(max_length=100, label='Parola Doğrulama', widget=forms.PasswordInput)
     email = forms.EmailField(max_length=100, label='E-mail')
-    userbirtday = forms.DateField(label='Doğum Tarihi', widget=forms.DateInput(format='%Y-%m-%d',
+    user_birthday = forms.DateField(label='Doğum Tarihi', widget=forms.DateInput(format='%Y-%m-%d',
                                                                                attrs={'class': 'form-control',
                                                                                       'placeholder': 'Select a date',
                                                                                       'type': 'date'}))
@@ -34,7 +34,7 @@ class RegisterForm(forms.ModelForm):
             'password1',
             'password2',
             'email',
-            'userbirtday',
+            'user_birthday',
         ]
 
     def clean_password2(self):

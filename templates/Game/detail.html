@@ -3,7 +3,11 @@
 {% block body %}
     <div>
         <h1>{{ game.GameName }}
+            {% if userfav.count < 1  %}
             <button class="favori">Favori Ekle</button>
+                {% else %}
+            <button class="favori">Favori çıkar</button>
+            {% endif %}
         </h1>
         <p>oyun ismi: {{ game.GameName }}<br></p>
         <p>oyun çıkış tarihi: {{ detail.ReleaseDate }}<br></p>
@@ -18,6 +22,11 @@
     </div>
     <div>
         <h1>Kategori</h1>
+        {% for selectgames in selectgame %}
+{#            sadece oyunun kategorileri listelenecek #}
+
+            <a>{{ selectgames.verbose_name }}</a><br>
+        {% endfor %}
 
 
     </div>
